@@ -2,90 +2,69 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: poppins;
 }
-/* ჰედერი */
-.header {
-    width: 100%;
-    background-color: red;
+
+body{
     display: flex;
     justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #23242a;
+}
+.box{
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: #1c1c1c;
+    border-radius: 8px;
+    overflow: hidden;
+
+
+}
+.box::before{
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 600px;
+    height: 600px;
+    background: linear-gradient(0deg, transparent, #45f3ff, #45f3ff);
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+
+}
+.box::after{
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 600px;
+    height: 600px;
+    background: linear-gradient(0deg, transparent, #45f3ff, #45f3ff);
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+    animation-delay: -3s;
+
 }
 
-.navigation {
-    display: flex;
-    justify-content: center;
+.form{
+    position: absolute;
+    inset: 2px;
+    border-radius: 8px;
+    background: #28292d;
+    z-index: 10;
 }
 
-.nav_link {
-    list-style: none;
-    padding: 15px;
-    font-size: 20px;
-    color: black;
-}
-/* ჰედერის ბოქსი */
-.header {
-    box-shadow: 0px 4px 5px 0px rgba(17, 33, 156, 0.71);
-    -webkit-box-shadow: 0px 4px 5px 0px rgba(17, 33, 156, 0.71);
-    -moz-box-shadow: 0px 4px 5px 0px rgba(17, 33, 156, 0.71)
-}
 
-.banner_photo {
-    justify-content: center;
-    width: 100%;
-}
-
-.container {
-    width: 1200px;
-    margin: 0 auto;
-}
-
-.row {
-    display: flex;
-    justify-content: center;
-}
-
-.col-6 {
-    width: 50%;
-}
-
-.col-3 {
-    width: 33.3%;
-}
-
-img {
-    width: 100%;
-}
-
-iframe {
-    width: 100%;
-}
-
-input[type=text],
-select,
-textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    resize: vertical;
-}
-
-input[type=submit] {
-    background-color: #04AA6D;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    cursor: pointer;
-}
-
-input[type=submit]:hover {
-    background-color: #45a049;
-}
-
-/* Style the container/contact section */
-.contact-container\  {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 10px;
+@keyframes animate 
+{
+    0%
+    {
+        transform: rotate(0deg);
+    }
+    100%
+    {
+        transform: rotate(360deg);
+    }
 }
